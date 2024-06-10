@@ -1,0 +1,75 @@
+@keyframes slideIn {
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    50%{
+        opacity: .7;
+    }
+    0%{
+        opacity: .3;
+    }
+}
+
+@keyframes activeA {
+    0%{
+        opacity: 0;
+        scale: 0;
+    }
+    100%{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-140%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleSlideRigth {
+    from{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes sllideButtom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(.2);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes activeTec {
+    from{
+        background-color: transparent;
+    }
+    to{
+        background-color: #fff;
+        color: #000;
+    }
+}

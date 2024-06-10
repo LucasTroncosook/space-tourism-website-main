@@ -1,0 +1,211 @@
+@import url('../css/animation.css');
+@import url('../css/root.css');
+
+body{
+    background-image: url('../starter-code/assets/destination/background-destination-desktop.jpg');
+}
+
+.main{
+    width: 87%;
+    height: 90%;
+    display: flex;
+    margin-left: auto;
+    justify-content: space-between;
+
+    & > section:nth-child(1){
+        width: 35%;
+        display: flex;
+        align-items: start;
+        justify-content: end;
+        flex-direction: column;
+        color: #fff;
+        gap: 60px;
+        h2{
+            font-weight: 500;
+            display: flex;
+            text-transform: uppercase;
+            letter-spacing: 3.5px;
+            gap: 10px;
+            font-size: clamp(.8rem,2vw,1.4rem);
+            span{
+                font-weight: 400;
+                opacity: .7;
+            }
+        }
+        img{
+            width: 100%;
+            min-width: 300px;
+            max-width: 380px;
+            height: 380px;
+            object-fit: contain;
+            margin: 0 auto;
+            transform: translateX(-150%);
+            opacity: 0;
+            animation: slideIn 1.2s forwards;
+        }
+    }
+
+    section:nth-child(2){
+        width: 100%;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        & > section{
+            width: 55%;
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            color: #fff;
+            nav{
+                display: flex;
+                width: 55%;
+                height: 40px;
+                justify-content: space-between;
+                gap: 20px;
+                a{
+                    color: #fff;
+                    text-transform: uppercase;
+                    font-size: clamp(.8rem,5vw,1.2rem);
+                    position: relative;
+                    &.active::after{
+                        content: "";
+                        width: 100%;
+                        height: 3px;
+                        opacity: 0;
+                        position: absolute;
+                        background-color: #fff;
+                        bottom: 0;
+                        left: 0;
+                        animation: activeA 1.5s forwards;
+                    }
+                }
+            }
+            article{
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                gap: 20px;
+                border-bottom: 1px solid #fff;
+                padding-bottom: 20px;
+                h2{            
+                    text-transform: uppercase;
+                    font-weight: 200;
+                    font-size: clamp(1.8rem,8.5vw,7.5rem);
+                    letter-spacing: 5px;
+                    animation: titleSlideRigth .9s forwards;
+                }
+                p{
+                    font-weight: 200;
+                    font-size: clamp(.5rem,2vw,1.4rem);
+                    max-width: 42.5ch;
+                }
+            }
+            section{
+                display: flex;
+                padding-top: 20px;
+                width: 80%;
+                justify-content: space-between;
+                gap: 10px;
+                font-family: var(--Barlow-Condensed);
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    text-transform: uppercase;
+                    span{
+                        font-weight: 200;
+                        font-size: clamp(.6rem,1vw,.85rem);
+                        letter-spacing: 1px;
+                    }
+                    h3{
+                        font-weight: 300;
+                        font-size: clamp(1.1rem,1.8vw,1.65rem);
+                        letter-spacing: 3.5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.animacion {
+    display: inline-block;
+    opacity: 0;
+    animation: aparecer 1s forwards;
+}
+
+
+@media(width <= 928px){
+    body{
+        height: auto;
+        overflow-y: scroll;
+        background-image: url('../starter-code/assets/destination/background-destination-tablet.jpg');
+    }
+    .main{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+        margin-block: 30px;
+        padding-top: 150px;
+        justify-content: space-evenly;
+        align-items: center;
+        & > section:nth-child(1){
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            row-gap: 20px;
+            width: 70%;
+            margin: 0 auto;
+            h2{
+               font-size: 1.4rem;
+
+            }
+        }
+        & > section:nth-child(2){
+            & > section{
+                row-gap: 30px;
+                nav{
+                    width: 100%;
+                    gap: 10px;
+                }
+                article{
+                    text-align: center;
+                    h2{
+                        font-size: clamp(3rem,11.5vw,8.5rem);
+                    }
+                    p{
+                        margin: 0 auto;
+                        text-align: center;
+                        font-size: clamp(.9rem,3vw,1.3rem);
+                    }
+                }
+                section{
+                    width: 100%;
+                    row-gap: 20px;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    div{
+                        row-gap: 5px;
+                        span{
+                            font-size: clamp(1rem,3vw,1.1rem);
+                        }
+                        h3{
+                            font-size: clamp(1.2rem,3.5vw,2.2rem);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(width <= 554px){
+    body{
+        overflow-y: scroll;
+        background-image: url('../starter-code/assets/destination/background-destination-mobile.jpg');
+    }
+}
+
